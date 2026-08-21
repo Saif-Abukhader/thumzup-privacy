@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thumzup Privacy Policy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #F3E9D2;
+    --surface: #FFFBF0;
+    --surface-raised: #FFFFFF;
+    --text: #1B1712;
+    --text-soft: #7C6F55;
+    --accent: #F8BD3B;
+    --accent-dark: #1B1712;
+    --accent-strong: #C97F0A;
+    --chili: #DD6A4A;
+    --jade: #2F8F5B;
+    --line: #E3D6B8;
+    --line-strong: #D9CBA3;
+    --shadow: rgba(27, 23, 18, 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15110B;
+      --surface: #1E1911;
+      --surface-raised: #241E15;
+      --text: #F3E9D2;
+      --text-soft: #B4A583;
+      --accent: #F8BD3B;
+      --accent-dark: #15110B;
+      --accent-strong: #F8BD3B;
+      --chili: #E88467;
+      --jade: #4CAE7C;
+      --line: #3A3122;
+      --line-strong: #4A3F2A;
+      --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0 20px 96px;
+  }
+
+  a { color: var(--accent-strong); text-decoration-thickness: 1.5px; }
+  a:focus-visible, button:focus-visible, .toc a:focus-visible {
+    outline: 2px solid var(--accent-strong);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; }
+
+  .masthead {
+    margin-top: 48px;
+    background: var(--surface-raised);
+    border: 1.5px solid var(--line-strong);
+    border-radius: 18px;
+    padding: 40px 36px 32px;
+    box-shadow: 0 10px 30px var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed var(--line-strong);
+    border-radius: 10px;
+    pointer-events: none;
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--accent);
+    display: grid;
+    place-items: center;
+    font-family: 'Archivo Black', 'Arial Black', sans-serif;
+    color: var(--accent-dark);
+    font-size: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 3px 0 var(--accent-dark);
+  }
+  .brand-name {
+    font-family: 'Archivo Black', 'Arial Black', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: 'Archivo Black', 'Arial Black', sans-serif;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .dek {
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    max-width: 52ch;
+    margin: 0 0 24px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12.5px;
+  }
+  .meta-chip {
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 6px 14px;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .meta-chip strong { color: var(--text); font-weight: 600; }
+
+  .toc {
+    margin: 32px 0 8px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .toc-label {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin: 0 0 12px;
+  }
+  .toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 24px;
+  }
+  .toc li { break-inside: avoid; margin-bottom: 8px; }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    gap: 8px;
+  }
+  .toc a:hover { color: var(--accent-strong); }
+  .toc .num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    color: var(--accent-strong);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  section.policy-section {
+    margin-top: 40px;
+    padding-top: 8px;
+    scroll-margin-top: 24px;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    border-bottom: 2px solid var(--line-strong);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-strong);
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    padding: 2px 8px;
+  }
+  h2 {
+    font-family: 'Archivo Black', 'Arial Black', sans-serif;
+    font-size: 1.3rem;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 20px 0 6px;
+  }
+  p { margin: 0 0 14px; max-width: 66ch; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 8px; max-width: 62ch; }
+  li::marker { color: var(--accent-strong); }
+
+  .table-scroll { overflow-x: auto; margin: 4px 0 20px; border: 1px solid var(--line); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14px; background: var(--surface); }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-soft);
+    background: var(--bg);
+  }
+  tr:last-child td { border-bottom: none; }
+  td.who { font-weight: 600; }
+
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--jade);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 4px 0 18px;
+    font-size: 14.5px;
+  }
+  .callout.warn { border-left-color: var(--chili); }
+  .callout strong { display: block; margin-bottom: 4px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .callout.warn strong { color: var(--chili); }
+  .callout:not(.warn) strong { color: var(--jade); }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--text-soft);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  @media (max-width: 600px) {
+    .masthead { padding: 28px 22px 24px; }
+    .toc ol { columns: 1; }
+    footer { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brand-row">
+      <div class="brand-mark">T</div>
+      <div class="brand-name">Thumzup</div>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="dek">How Thumzup collects, uses, and protects your information when you order dessert puddings from Kitchen No.3 through our app.</p>
+    <div class="meta-row">
+      <span class="meta-chip">Effective <strong>August 22, 2026</strong></span>
+      <span class="meta-chip">App <strong>Thumzup (com.thumzup.app)</strong></span>
+      <span class="meta-chip">Region <strong>Amman, Jordan</strong></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-label">On this page</p>
+    <ol>
+      <li><a href="#collect"><span class="num">01</span> Information we collect</a></li>
+      <li><a href="#use"><span class="num">02</span> How we use it</a></li>
+      <li><a href="#share"><span class="num">03</span> Who we share it with</a></li>
+      <li><a href="#retention"><span class="num">04</span> Retention &amp; account deletion</a></li>
+      <li><a href="#choices"><span class="num">05</span> Your choices</a></li>
+      <li><a href="#security"><span class="num">06</span> Security</a></li>
+      <li><a href="#children"><span class="num">07</span> Children's privacy</a></li>
+      <li><a href="#changes"><span class="num">08</span> Changes to this policy</a></li>
+      <li><a href="#contact"><span class="num">09</span> Contact us</a></li>
+    </ol>
+  </nav>
+
+  <section class="policy-section" id="collect">
+    <div class="section-head"><span class="section-num">01</span><h2>Information we collect</h2></div>
+    <p>We collect only what's needed to take your order, get it to your door, and let you track it.</p>
+
+    <h3>Account information</h3>
+    <ul>
+      <li><strong>Full name, email, and phone number</strong> — collected when you create an account. Phone number is required so our kitchen and courier can reach you about your order.</li>
+      <li><strong>Password</strong> — never stored by us in readable form; it's handled entirely by our authentication provider, Supabase.</li>
+    </ul>
+
+    <h3>Delivery &amp; location</h3>
+    <ul>
+      <li><strong>Delivery addresses</strong> you save or enter at checkout, either typed manually or filled in using your device's GPS location (only when you tap "Use current location").</li>
+    </ul>
+
+    <h3>Orders &amp; payment</h3>
+    <ul>
+      <li><strong>Order history</strong> — items, quantities, prices, promo codes used, and delivery status.</li>
+      <li><strong>Payment</strong> — card payments are handled entirely on PayTabs' own hosted payment page. Your card number never reaches Thumzup's servers or database. If you choose cash on delivery, we only record that payment method against your order.</li>
+    </ul>
+
+    <h3>Notifications</h3>
+    <ul>
+      <li><strong>Push notification token</strong> — a device identifier issued by Expo, used only to alert you when your order is ready or out for delivery.</li>
+    </ul>
+  </section>
+
+  <section class="policy-section" id="use">
+    <div class="section-head"><span class="section-num">02</span><h2>How we use it</h2></div>
+    <ul>
+      <li>Take, prepare, and fulfill your orders</li>
+      <li>Get your order to the right address and keep you updated on its status (placed → preparing → out for delivery → delivered)</li>
+      <li>Send order-related push notifications (order ready, out for delivery)</li>
+      <li>Validate promo codes and prevent abuse</li>
+      <li>Maintain your account and order history so you can reorder easily</li>
+    </ul>
+    <div class="callout">
+      <strong>What we don't do</strong>
+      We don't use your data for advertising, we don't run analytics or tracking SDKs in the app, and we never sell your personal information.
+    </div>
+  </section>
+
+  <section class="policy-section" id="share">
+    <div class="section-head"><span class="section-num">03</span><h2>Who we share it with</h2></div>
+    <p>We share data only with the services that make the app work — never for marketing purposes.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Who</th><th>What they see</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="who">Supabase</td><td>Account data, orders, delivery addresses</td><td>Our database, authentication, and backend hosting provider</td></tr>
+          <tr><td class="who">PayTabs</td><td>Payment details, order amount</td><td>Processes card payments on their own secure hosted page</td></tr>
+          <tr><td class="who">Expo</td><td>Push notification token</td><td>Delivers order-status push notifications to your device</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="policy-section" id="retention">
+    <div class="section-head"><span class="section-num">04</span><h2>Retention &amp; account deletion</h2></div>
+    <p>You can request account deletion any time from <strong>Account → Danger zone → Delete account</strong> in the app.</p>
+    <div class="callout">
+      <strong>30-day grace period</strong>
+      When you request deletion, you're signed out immediately and your account is permanently erased 30 days later. Changed your mind? Contact us before the 30 days are up.
+    </div>
+    <p>Order records themselves are kept after your account is deleted — with the link to your identity removed — since we're required to retain transaction records for accounting purposes. They're no longer associated with you.</p>
+  </section>
+
+  <section class="policy-section" id="choices">
+    <div class="section-head"><span class="section-num">05</span><h2>Your choices</h2></div>
+    <ul>
+      <li><strong>Location</strong> — you can decline location access; you'll just need to type your delivery address instead of using "Use current location."</li>
+      <li><strong>Notifications</strong> — you can turn off push notifications in your device settings; you'll still see order status inside the app.</li>
+      <li><strong>Addresses</strong> — add, edit, or remove saved delivery addresses any time from Account → Delivery addresses.</li>
+    </ul>
+  </section>
+
+  <section class="policy-section" id="security">
+    <div class="section-head"><span class="section-num">06</span><h2>Security</h2></div>
+    <ul>
+      <li>All traffic between the app and our servers is encrypted (HTTPS/TLS).</li>
+      <li>Passwords are hashed by Supabase Auth — we never see or store them directly.</li>
+      <li>Card numbers are entered directly on PayTabs' payment page and never pass through our servers.</li>
+      <li>Database access is restricted by row-level security so you can only see your own orders and addresses (kitchen staff can see order queues needed to fulfill them).</li>
+    </ul>
+  </section>
+
+  <section class="policy-section" id="children">
+    <div class="section-head"><span class="section-num">07</span><h2>Children's privacy</h2></div>
+    <p>Thumzup is not directed at children, and we don't knowingly collect information from anyone under 13. If you believe a child has created an account, contact us and we'll remove it.</p>
+  </section>
+
+  <section class="policy-section" id="changes">
+    <div class="section-head"><span class="section-num">08</span><h2>Changes to this policy</h2></div>
+    <p>If we make material changes to this policy, we'll update the effective date above and, where required, notify you in the app.</p>
+  </section>
+
+  <section class="policy-section" id="contact">
+    <div class="section-head"><span class="section-num">09</span><h2>Contact us</h2></div>
+    <p>Questions about this policy or your data — including deletion requests outside the app — can be sent to:</p>
+    <div class="callout">
+      <strong>Support</strong>
+      <a href="mailto:thumzupsupport@gmail.com">thumzupsupport@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Thumzup / Kitchen No.3</span>
+    <span>thumzupsupport@gmail.com</span>
+  </footer>
+
+</div>
+</body>
+</html>
