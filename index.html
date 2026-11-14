@@ -272,7 +272,7 @@
     <h1>Privacy Policy</h1>
     <p class="dek">How Thumzup collects, uses, and protects your information when you order dessert puddings from Kitchen No.3 through our app.</p>
     <div class="meta-row">
-      <span class="meta-chip">Effective <strong>August 22, 2026</strong></span>
+      <span class="meta-chip">Effective <strong>November 14, 2026</strong></span>
       <span class="meta-chip">App <strong>Thumzup (com.thumzup.app)</strong></span>
       <span class="meta-chip">Region <strong>Amman, Jordan</strong></span>
     </div>
@@ -299,8 +299,10 @@
 
     <h3>Account information</h3>
     <ul>
-      <li><strong>Full name, email, and phone number</strong> — collected when you create an account. Phone number is required so our kitchen and courier can reach you about your order.</li>
+      <li><strong>Full name and phone number</strong> — collected when you create an account. Your phone number is how you log in, and how our kitchen and courier reach you about your order. Older accounts may also have an email address.</li>
+      <li><strong>Verification codes</strong> — to confirm your number, we send a one-time code to it by text message (or WhatsApp, where available) through Twilio.</li>
       <li><strong>Password</strong> — never stored by us in readable form; it's handled entirely by our authentication provider, Supabase.</li>
+      <li><strong>Birthday</strong> (optional) — only if you add it, so we can send you a birthday gift.</li>
     </ul>
 
     <h3>Delivery &amp; location</h3>
@@ -311,12 +313,19 @@
     <h3>Orders &amp; payment</h3>
     <ul>
       <li><strong>Order history</strong> — items, quantities, prices, promo codes used, and delivery status.</li>
-      <li><strong>Payment</strong> — card payments are handled entirely on PayTabs' own hosted payment page. Your card number never reaches Thumzup's servers or database. If you choose cash on delivery, we only record that payment method against your order.</li>
+      <li><strong>Payment</strong> — you pay cash on delivery, or by a CliQ transfer you send from your own bank app. We only record the payment method and whether the transfer arrived. We never see or store card or bank login details.</li>
+      <li><strong>Reward points</strong> — points earned on delivered orders, and the reward codes they turn into.</li>
     </ul>
 
     <h3>Notifications</h3>
     <ul>
-      <li><strong>Push notification token</strong> — a device identifier issued by Expo, used only to alert you when your order is ready or out for delivery.</li>
+      <li><strong>Push notification token</strong> — a device identifier issued by Expo, used to send you updates about your orders, and offers only if you turn on "Offers and news".</li>
+    </ul>
+
+    <h3>App reliability and safety</h3>
+    <ul>
+      <li><strong>Crash reports</strong> — if the app crashes or hits an error, a report goes to Sentry: what went wrong, the app version, and your device model and operating system. It's used only to fix bugs.</li>
+      <li><strong>Security check</strong> — when you ask for a login code, Cloudflare Turnstile may check that the request comes from a real person, to stop automated abuse.</li>
     </ul>
   </section>
 
@@ -325,13 +334,16 @@
     <ul>
       <li>Take, prepare, and fulfill your orders</li>
       <li>Get your order to the right address and keep you updated on its status (placed → preparing → out for delivery → delivered)</li>
-      <li>Send order-related push notifications (order ready, out for delivery)</li>
+      <li>Send order-related push notifications (order confirmed, ready, out for delivery, cancelled)</li>
+      <li>Send offers and news, only if you turned them on</li>
+      <li>Send your birthday gift and reward codes</li>
+      <li>Find and fix crashes</li>
       <li>Validate promo codes and prevent abuse</li>
       <li>Maintain your account and order history so you can reorder easily</li>
     </ul>
     <div class="callout">
       <strong>What we don't do</strong>
-      We don't use your data for advertising, we don't run analytics or tracking SDKs in the app, and we never sell your personal information.
+      We don't use your data for advertising, we don't run analytics or tracking SDKs in the app (crash reporting is the only diagnostic tool), and we never sell your personal information.
     </div>
   </section>
 
@@ -345,8 +357,11 @@
         </thead>
         <tbody>
           <tr><td class="who">Supabase</td><td>Account data, orders, delivery addresses</td><td>Our database, authentication, and backend hosting provider</td></tr>
-          <tr><td class="who">PayTabs</td><td>Payment details, order amount</td><td>Processes card payments on their own secure hosted page</td></tr>
-          <tr><td class="who">Expo</td><td>Push notification token</td><td>Delivers order-status push notifications to your device</td></tr>
+          <tr><td class="who">Expo</td><td>Push notification token</td><td>Delivers push notifications to your device</td></tr>
+          <tr><td class="who">Twilio</td><td>Phone number</td><td>Sends verification codes by text message or WhatsApp</td></tr>
+          <tr><td class="who">Sentry</td><td>Crash reports, device model and operating system</td><td>Helps us find and fix errors in the app</td></tr>
+          <tr><td class="who">Cloudflare</td><td>Security check signals from the login screen</td><td>Blocks automated abuse of login codes</td></tr>
+          <tr><td class="who">Google (Android) / Apple (iPhone)</td><td>Map locations you view or pick</td><td>Shows maps and turns a pinned location into an address</td></tr>
         </tbody>
       </table>
     </div>
@@ -367,6 +382,8 @@
     <ul>
       <li><strong>Location</strong> — you can decline location access; you'll just need to type your delivery address instead of using "Use current location."</li>
       <li><strong>Notifications</strong> — you can turn off push notifications in your device settings; you'll still see order status inside the app.</li>
+      <li><strong>Offers and news</strong> — off unless you turn it on, and you can turn it off any time from Account → Notifications.</li>
+      <li><strong>Birthday</strong> — optional; leave it empty if you don't want a birthday gift.</li>
       <li><strong>Addresses</strong> — add, edit, or remove saved delivery addresses any time from Account → Delivery addresses.</li>
     </ul>
   </section>
@@ -376,7 +393,7 @@
     <ul>
       <li>All traffic between the app and our servers is encrypted (HTTPS/TLS).</li>
       <li>Passwords are hashed by Supabase Auth — we never see or store them directly.</li>
-      <li>Card numbers are entered directly on PayTabs' payment page and never pass through our servers.</li>
+      <li>No card numbers or bank login details are ever entered in or stored by the app.</li>
       <li>Database access is restricted by row-level security so you can only see your own orders and addresses (kitchen staff can see order queues needed to fulfill them).</li>
     </ul>
   </section>
